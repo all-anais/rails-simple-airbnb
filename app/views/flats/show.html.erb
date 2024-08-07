@@ -1,0 +1,18 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @flat %>
+
+<% @flat.reviews.each do |review| %>
+  <div>
+  <%= review.content %>
+  <%= link_to 'Delete this review', review_path(review), data: { turbo_method: :delete, turbo_confirm: "Are you sure ?????" } %>
+  </div>
+<% end %>
+
+<div>
+  <%= link_to "Edit this flat", edit_flat_path(@flat) %> |
+  <%= link_to 'Add a review', new_flat_review_path(@flat) %>
+  <%= link_to "Back to flats", flats_path %>
+
+  <%= button_to "Destroy this flat", @flat, method: :delete %>
+</div>

@@ -1,0 +1,15 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>flats</h1>
+
+<div class = "container text-center">
+  <ul>
+    <% @flats.each do |flat| %>
+    <div class = "container text-center">
+      <li><%= flat.name %> - <%= flat.address %> - <%= flat.description %>
+      </li>
+    </div>
+    <% end %>
+  </ul>
+
+<%= link_to "New flat", new_flat_path %>
